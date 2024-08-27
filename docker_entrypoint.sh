@@ -62,6 +62,18 @@ export APP_PASSWORD=$(yq e ".password" /data/start9/config.yaml)
 export BTC_RPC_USER=$(yq e '.bitcoind-user' /data/start9/config.yaml)
 export BTC_RPC_PASSWORD=$(yq e '.bitcoind-password' /data/start9/config.yaml)
 
+export SPACED_RPC_BIND=$BTC_RPC_HOST
+export SPACED_RPC_PORT=$BTC_RPC_PORT
+export SPACED_BITCOIN_RPC_USER=$BTC_RPC_USER
+export SPACED_BITCOIN_RPC_PASSWORD=$BTC_RPC_PASSWORD
+export SPACED_DATA_DIR='/data'
+export SPACED_CHAIN='testnet4'
+
+export SPACED_BITCOIN_RPC_URL=$BTC_RPC_HOST:$BTC_RPC_PORT
+
+# https://spacesprotocol.org/#install-spaced for more command info
+alias spaces='space-cli --chain testnet4'
+
 echo APP_USER = $APP_USER
 echo APP_PASSWORD = $APP_PASSWORD
 
@@ -70,6 +82,12 @@ GOTTY_CREDS=$APP_USER:$APP_PASSWORD
 echo GOTTY_CREDS = $GOTTY_CREDS
 
 # This is being done in btcshell instead
+
+# https://spacesprotocol.org/#install-spaced
+git clone https://github.com/spacesprotocol/spaced && cd spaced
+cargo build --release
+cargo install --path node --locked
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 
 #mkdir -p /data/bin
 #echo '#!/bin/bash' > /data/setpath

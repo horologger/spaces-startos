@@ -2,9 +2,9 @@
   <img src="spaces-logo.png" alt="Project Logo" width="21%">
 </p>
 
-# LND Shell for StartOS
+# Spaces for StartOS
 
-[LND Shell](https://nwc.dev/) allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a LND Shell relay. This repository creates the `s9pk` package that is installed to run `LND Shell` on [StartOS](https://github.com/Start9Labs/start-os/).
+[Spaces](https://nwc.dev/) allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a Spaces relay. This repository creates the `s9pk` package that is installed to run `Spaces` on [StartOS](https://github.com/Start9Labs/start-os/).
 
 ## Dependencies
 
@@ -19,7 +19,7 @@ Prior to building the `spaces` package, it's essential to configure your build e
 
 ## Cloning
 
-Clone the **LND Shell** package repository locally.
+Clone the **Spaces** package repository locally.
 
 ```
 git clone https://github.com/horologger/spaces-startos.git
@@ -28,7 +28,7 @@ cd spaces-startos
 
 ## Building
 
-To build the **LND Shell** service as a universal package, run the following command:
+To build the **Spaces** service as a universal package, run the following command:
 
 ```
 make
@@ -62,6 +62,6 @@ make install
 
 ## Verify Install
 
-Go to your StartOS Services page, select **LND Shell** and start the service.
+Go to your StartOS Services page, select **Spaces** and start the service.
 
 **Done!**

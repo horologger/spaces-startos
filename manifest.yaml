@@ -1,7 +1,7 @@
 id: spaces
 title: Spaces
-version: 0.0.1
-release-notes: Spaces 0.0.1
+version: 0.0.2
+release-notes: Spaces 0.0.2
 license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/spaces-startos"
 upstream-repo: "https://github.com/horologger/spaces"
@@ -11,7 +11,7 @@ build: ["make"]
 description:
   short: An open protocol for connecting lightning wallets to apps
   long: |
-    NWC allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a LND Shell relay.
+    NWC allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a Spaces relay.
 assets:
   license: LICENSE
   icon: spaces-logo.png
@@ -27,7 +27,7 @@ main:
 health-checks:
   web-ui:
     name: Web UI
-    success-message: LND Shell UI is ready
+    success-message: Spaces is ready
     type: script
 config:
   get:

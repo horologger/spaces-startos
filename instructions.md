@@ -9,12 +9,12 @@
 
 ## Connecting your client app
 
-1. In your LND Shell client app, find the setting for connecting your lightning node and select `LND Shell`. For noStrudel, this is in Settings -> Lightning.
+1. In your Spaces client app, find the setting for connecting your lightning node and select `Spaces`. For noStrudel, this is in Settings -> Lightning.
 2. Provide the connection secret generated from the instructions above either by scanning the QR code or copy/pasting the secret.
 3. Done. You can now zapp and boost using your own lightning node.
 
 ## Getting Help
 
-For more information, see the [Alby LND Shell](https://nwc.dev/).
+For more information, see the [Alby Spaces](https://nwc.dev/).
 
 You can also ask for assistance in the [Start9 community chats](https://start9.com/contact).
