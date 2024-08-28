@@ -69,7 +69,7 @@ export SPACED_BITCOIN_RPC_PASSWORD=$BTC_RPC_PASSWORD
 export SPACED_DATA_DIR='/data'
 export SPACED_CHAIN='testnet4'
 
-export SPACED_BITCOIN_RPC_URL=$BTC_RPC_HOST:$BTC_RPC_PORT
+export SPACED_BITCOIN_RPC_URL='http://$BTC_RPC_HOST:$BTC_RPC_PORT'
 
 # https://spacesprotocol.org/#install-spaced for more command info
 alias spaces='space-cli --chain testnet4'
