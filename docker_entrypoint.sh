@@ -62,17 +62,26 @@ export APP_PASSWORD=$(yq e ".password" /data/start9/config.yaml)
 export BTC_RPC_USER=$(yq e '.bitcoind-user' /data/start9/config.yaml)
 export BTC_RPC_PASSWORD=$(yq e '.bitcoind-password' /data/start9/config.yaml)
 
-export SPACED_RPC_BIND=$BTC_RPC_HOST
-export SPACED_RPC_PORT=$BTC_RPC_PORT
+# Let it use the defaults http://127.0.0.1:7224
+# export SPACED_RPC_BIND=$BTC_RPC_HOST
+# export SPACED_RPC_PORT=$BTC_RPC_PORT
 export SPACED_BITCOIN_RPC_USER=$BTC_RPC_USER
 export SPACED_BITCOIN_RPC_PASSWORD=$BTC_RPC_PASSWORD
 export SPACED_DATA_DIR='/data'
 export SPACED_CHAIN='testnet4'
-
-export SPACED_BITCOIN_RPC_URL='http://$BTC_RPC_HOST:$BTC_RPC_PORT'
+export SPACED_BITCOIN_RPC_URL='http://'$BTC_RPC_HOST':'$BTC_RPC_PORT
+echo "echo blockchain-cli getblockchaininfo" >> /root/.bashrc
+echo "echo spaces help" >> /root/.bashrc
+echo "echo" >> /root/.bashrc
+echo "echo 'For getting started info: https://spacesprotocol.org/#creating-a-wallet'" >> /root/.bashrc
+echo "echo" >> /root/.bashrc
+echo "echo 'Launch the spaced daemon with the following." >> /root/.bashrc
+echo "screen -S spaced -d -m spaced &" >> /root/.bashrc
+echo "echo 'screen -x spaced  = Monitor spaced <Ctrl-a> d to detach '" >> /root/.bashrc
+echo "alias spaces='space-cli --chain testnet4'" >> /root/.bashrc
+echo "screen -S spaced -d -m spaced &" >> /root/.bashrc
 
 # https://spacesprotocol.org/#install-spaced for more command info
-alias spaces='space-cli --chain testnet4'
 
 echo APP_USER = $APP_USER
 echo APP_PASSWORD = $APP_PASSWORD
@@ -84,9 +93,9 @@ echo GOTTY_CREDS = $GOTTY_CREDS
 # This is being done in btcshell instead
 
 # https://spacesprotocol.org/#install-spaced
-git clone https://github.com/spacesprotocol/spaced && cd spaced
-cargo build --release
-cargo install --path node --locked
+# git clone https://github.com/spacesprotocol/spaced && cd spaced
+# cargo build --release
+# cargo install --path node --locked
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 
 #mkdir -p /data/bin
