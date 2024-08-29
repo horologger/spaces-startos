@@ -2,7 +2,7 @@ FROM horologger/btcshell:v0.0.1
 LABEL maintainer="horologger <horologger@protonmail.com>"
 
 # Start9 Packaging
-RUN apk add --no-cache yq cargo pkgconfig openssl openssl-dev openssl-libs-static gcompat git; \
+RUN apk add --no-cache yq cargo pkgconfig openssh openssl openssl-dev openssl-libs-static gcompat git; \
     rm -f /var/cache/apk/*
 
 # RUN git clone https://github.com/spacesprotocol/spaced && cd spaced ; \

@@ -75,8 +75,8 @@ echo "echo spaces help" >> /root/.bashrc
 echo "echo" >> /root/.bashrc
 echo "echo 'For getting started info: https://spacesprotocol.org/#creating-a-wallet'" >> /root/.bashrc
 echo "echo" >> /root/.bashrc
-echo "echo 'Launch the spaced daemon with the following." >> /root/.bashrc
-echo "screen -S spaced -d -m spaced &" >> /root/.bashrc
+echo "echo 'Launch the spaced daemon with the following.'" >> /root/.bashrc
+echo "echo 'screen -S spaced -d -m spaced &'" >> /root/.bashrc
 echo "echo 'screen -x spaced  = Monitor spaced <Ctrl-a> d to detach '" >> /root/.bashrc
 echo "alias spaces='space-cli --chain testnet4'" >> /root/.bashrc
 echo "screen -S spaced -d -m spaced &" >> /root/.bashrc
