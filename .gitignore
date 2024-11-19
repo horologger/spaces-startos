@@ -7,3 +7,4 @@ docker-images/
 *.s9pk
 scripts/*.js
 NOTES.md
+.vscode/

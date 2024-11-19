@@ -1,7 +1,7 @@
 id: spaces
 title: Spaces
-version: 0.0.2
-release-notes: Spaces 0.0.2
+version: 0.0.3
+release-notes: Spaces 0.0.3
 license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/spaces-startos"
 upstream-repo: "https://github.com/horologger/spaces"
@@ -23,7 +23,6 @@ main:
   args: []
   mounts:
     main: /data
-    lnd: /mnt/lnd
 health-checks:
   web-ui:
     name: Web UI
@@ -39,12 +38,6 @@ environment: ~
 volumes:
   main:
     type: data
-  lnd:
-    type: pointer
-    package-id: lnd
-    volume-id: main
-    path: /public
-    readonly: true
 interfaces:
   main:
     name: User Interface
