@@ -6,7 +6,7 @@ RUN apk add --no-cache yq cargo pkgconfig openssh openssl openssl-dev openssl-li
     rm -f /var/cache/apk/*
 
 # RUN git clone https://github.com/spacesprotocol/spaced && cd spaced ; \
-RUN git clone https://github.com/andrewlunde/spaced && cd spaced ; \
+RUN git clone https://github.com/horologger/spaced && cd spaced ; \
     cargo build --release ; \
     cargo install --path node --locked ; cd ..
 # echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc

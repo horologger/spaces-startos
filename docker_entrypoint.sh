@@ -53,16 +53,26 @@ echo "Got: "$BTCURL
 mkdir -p /data/bin
 echo 'export PATH=/data/bin:$PATH' >> /root/.bashrc
 
-# Let it use the defaults http://127.0.0.1:7224
+export BTC_RPC_HOST="bitcoind.embassy"
+export BTC_RPC_PORT=8332
+
+export TOR_ADDRESS=$(yq e '.tor-address' /data/start9/config.yaml)
+export LAN_ADDRESS=$(yq e '.lan-address' /data/start9/config.yaml)
+export APP_USER=$(yq e ".user" /data/start9/config.yaml)
+export APP_PASSWORD=$(yq e ".password" /data/start9/config.yaml)
+export BTC_RPC_USER=$(yq e '.bitcoind-user' /data/start9/config.yaml)
+export BTC_RPC_PASSWORD=$(yq e '.bitcoind-password' /data/start9/config.yaml)
+
+# Let it use the defaults http://127.0.0.1:bitcoind
 # export SPACED_RPC_BIND=$BTC_RPC_HOST
 # export SPACED_RPC_PORT=$BTC_RPC_PORT
 export SPACED_BITCOIN_RPC_USER=$BTC_RPC_USER
 export SPACED_BITCOIN_RPC_PASSWORD=$BTC_RPC_PASSWORD
 export SPACED_DATA_DIR='/data'
-export SPACED_CHAIN='testnet4'
+export SPACED_CHAIN='mainnet'
 export SPACED_BITCOIN_RPC_URL='http://'$BTC_RPC_HOST':'$BTC_RPC_PORT
 export SPACED_RPC_HOST='127.0.0.1'
-export SPACED_RPC_PORT='7224'
+export SPACED_RPC_PORT='7225'
 export SPACED_RPC_URL='http://'$SPACED_RPC_HOST':'$SPACED_RPC_PORT
 export SPACED_BLOCK_INDEX='true'
 echo "echo bitcoin-cli -getinfo" >> /root/.bashrc
@@ -70,11 +80,12 @@ echo "echo spaces help" >> /root/.bashrc
 echo "echo" >> /root/.bashrc
 echo "echo 'For getting started info: https://docs.spacesprotocol.org/getting-started/quickstart'" >> /root/.bashrc
 echo "echo" >> /root/.bashrc
-echo "echo 'Monitor the spaced daemon with the following. <Ctrl-a> d to detach from session.'" >> /root/.bashrc
+echo "echo 'Monitor the spaced daemon with the following. <Ctrl-a> then d to detach from session.'" >> /root/.bashrc
 echo "echo 'screen -x spaced'" >> /root/.bashrc
-echo "alias spaces='space-cli --chain testnet4'" >> /root/.bashrc
+echo "alias spaces='space-cli --chain mainnet'" >> /root/.bashrc
 echo "screen -S spaced -d -m spaced" >> /root/.bashrc
 echo "export PS1='spaces:\w$ '" >> /root/.bashrc
+echo "echo" >> /root/.bashrc
 # Launch background processes in their own screen detached
 # Need to do this in an if stmt so that it only happens once
 echo "if [[ \$(screen -ls | grep htop | wc -l) > 0 ]]; then" >> /root/.bashrc
@@ -182,11 +193,11 @@ echo 'rpcport='$BTC_RPC_PORT >> ~/.bitcoin/bitcoin.conf
 # psql --username=$POSTGRES_USER --dbname=$POSTGRES_DB --command='\dt'
 
 # export DB_URL=postgres://postgres:password@127.0.0.1:5432/spacesprotocol_explorer
-export NETWORK=testnet4
-export SPACES_STARTING_BLOCKHEIGHT=871100
+export NETWORK=mainnet
+export SPACES_STARTING_BLOCKHEIGHT=871220
 export BITCOIN_RPC_URL=$SPACED_BITCOIN_RPC_URL
 export BITCOIN_RPC_USER=$SPACED_BITCOIN_RPC_USER
 export BITCOIN_RPC_PASSWORD=$SPACED_BITCOIN_RPC_PASSWORD
-# export SPACED_RPC_URL='http://127.0.0.1:7224'
+# export SPACED_RPC_URL='http://127.0.0.1:bitcoind'
 
 exec /usr/bin/gotty --port 8080 -c $GOTTY_CREDS --permit-write --reconnect /bin/bash

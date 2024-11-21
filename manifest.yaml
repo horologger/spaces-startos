@@ -1,7 +1,7 @@
 id: spaces
 title: Spaces
-version: 0.0.3
-release-notes: Spaces 0.0.3
+version: 0.0.4
+release-notes: Spaces 0.0.4
 license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/spaces-startos"
 upstream-repo: "https://github.com/horologger/spaces"
@@ -9,9 +9,9 @@ support-site: "https://github.com/horologger/spaces/issues"
 marketing-site: "https://github.com/horologger/spaces"
 build: ["make"]
 description:
-  short: An open protocol for connecting lightning wallets to apps
+  short: Scalable & Permissionless Bitcoin Identities
   long: |
-    NWC allows for sustained interaction between Bitcoin lightning wallets and apps. Once an app connection is created, the app can request payments through a Spaces relay.
+    Spaces empowers users with a sovereign Bitcoin identity, anchored securely on the Bitcoin blockchain.
 assets:
   license: LICENSE
   icon: spaces-logo.png
@@ -41,7 +41,7 @@ volumes:
 interfaces:
   main:
     name: User Interface
-    description: Create connections with LND Shell
+    description: Create connections with Spaces Shell
     tor-config:
       port-mapping:
         80: "8080"
@@ -54,7 +54,7 @@ interfaces:
       - tcp
       - http
 dependencies:
-  bitcoind-testnet:
+  bitcoind:
     version: ">=27.1.0 <28.0.0"
     description: Spaces works with your Bitcoin Core
     requirement:
