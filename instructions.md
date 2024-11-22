@@ -26,7 +26,7 @@ A command 'spaces' is an alias of the 'space-cli' command so you can user either
 2. 'mkdir -p /data/mainnet/wallets_backup/default'
 3. 'mv /data/mainnet/wallets/default/wallet.json /data/mainnet/wallets_backup/default'
 4. 'rm -rf /data/mainnet/wallets/default'
-5. 'vi /data/mainnet/wallets_backup/default/wallet.json'  Replace the xprv with yours. :wq to save
+5. 'vi /data/mainnet/wallets_backup/default/wallet.json'  Replace the xprv and blockheight with yours. :wq to save
 6. 'space-cli importwallet /data/mainnet/wallets_backup/default/wallet.json'
 7. 'space-cli balance'
 8. 'space-cli listspaces' If you had any active auctions/registered spaces.
