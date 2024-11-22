@@ -22,14 +22,16 @@ A command 'spaces' is an alias of the 'space-cli' command so you can user either
 3. Once the funds are confirmed with the 'space-cli balance' command you can start opening auctions.
 
 ## Importing and exisiting Taproot wallet(for Spaces functions)
-1. 'space-cli createwallet'
-2. 'mkdir -p /data/mainnet/wallets_backup/default'
+1. Create a new wallet so you have a template of what to import.
+```space-cli createwallet```
+2. Create a folder for wallet backups.```mkdir -p /data/mainnet/wallets_backup/default```
 3. 'mv /data/mainnet/wallets/default/wallet.json /data/mainnet/wallets_backup/default'
 4. 'rm -rf /data/mainnet/wallets/default'
 5. 'vi /data/mainnet/wallets_backup/default/wallet.json'  Replace the xprv and blockheight with yours. :wq to save
 6. 'space-cli importwallet /data/mainnet/wallets_backup/default/wallet.json'
 7. 'space-cli balance'
 8. 'space-cli listspaces' If you had any active auctions/registered spaces.
+
 
 ## Open up an auction for bidding.
 

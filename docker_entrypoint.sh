@@ -1,6 +1,4 @@
 #!/bin/bash
-#exec /bin/start.sh &
-#exec /bin/launch-edgestore.sh &
 DAOS=$(uname -s | tr '[:upper:]' '[:lower:]')
 # echo $DAOS
 if [ "$DAOS" == "linux" ]; then
@@ -10,9 +8,6 @@ else
   echo "Running on Mac"
   FNOS="darwin"
 fi
-
-DAARCH=$(uname -p | tr '[:upper:]' '[:lower:]')
-DAARCH=$(uname -m | tr '[:upper:]' '[:lower:]')
 
 # echo $DAARCH
 DAARCH=$(uname -m | tr '[:upper:]' '[:lower:]')
@@ -44,11 +39,6 @@ echo "Got: "$BTCURL
 
 #https://bitcoincore.org/bin/bitcoin-core-27.1/bitcoin-27.1-x86_64-linux-gnu.tar.gz
 #https://bitcoincore.org/bin/bitcoin-core-27.1/bitcoin-27.1-arm-linux-gnueabihf.tar.gz
-
-# This is now done in BTCShell
-# wget -O /tmp/bitcoin.tar.gz $BTCURL
-# tar xzf /tmp/bitcoin.tar.gz -C /tmp
-# cp /tmp/bitcoin-$FNVER/bin/bitcoin-cli /usr/local/bin
 
 mkdir -p /data/bin
 echo 'export PATH=/data/bin:$PATH' >> /root/.bashrc
