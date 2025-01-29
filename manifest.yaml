@@ -55,7 +55,7 @@ interfaces:
       - http
 dependencies:
   bitcoind:
-    version: ">=27.1.0 <28.0.0"
+    version: ">=27.1.0 <29.0.0"
     description: Spaces works with your Bitcoin Core
     requirement:
       type: "required"
