@@ -31,14 +31,14 @@ fi
 echo "BTC_RPC_HOST:" $BTC_RPC_HOST
 echo "BTC_RPC_PORT:" $BTC_RPC_PORT
 
-FNVER="27.1"
+FNVER="28.1"
 
 BTCFN="bitcoin-$FNVER-$FNARCH-linux-$FNSUFFIX.tar.gz"
 BTCURL="https://bitcoincore.org/bin/bitcoin-core-$FNVER/$BTCFN"
 echo "Got: "$BTCURL
 
-#https://bitcoincore.org/bin/bitcoin-core-27.1/bitcoin-27.1-x86_64-linux-gnu.tar.gz
-#https://bitcoincore.org/bin/bitcoin-core-27.1/bitcoin-27.1-arm-linux-gnueabihf.tar.gz
+#https://bitcoincore.org/bin/bitcoin-core-28.1/bitcoin-28.1-x86_64-linux-gnu.tar.gz
+#https://bitcoincore.org/bin/bitcoin-core-28.1/bitcoin-28.1-arm-linux-gnueabihf.tar.gz
 
 mkdir -p /data/bin
 echo 'export PATH=/data/bin:$PATH' >> /root/.bashrc
@@ -61,6 +61,10 @@ export SPACED_BITCOIN_RPC_PASSWORD=$BTC_RPC_PASSWORD
 export SPACED_DATA_DIR='/data'
 export SPACED_CHAIN='mainnet'
 export SPACED_BITCOIN_RPC_URL='http://'$BTC_RPC_HOST':'$BTC_RPC_PORT
+export BITCOIN_RPCUSER=$BTC_RPC_USER
+export BITCOIN_RPCPASSWORD=$BTC_RPC_PASSWORD
+export BITCOIN_RPCCONNECT=$BTC_RPC_HOST
+export BITCOIN_RPCPORT=$BTC_RPC_PORT
 export SPACED_RPC_HOST='127.0.0.1'
 export SPACED_RPC_PORT='7225'
 export SPACED_RPC_URL='http://'$SPACED_RPC_HOST':'$SPACED_RPC_PORT
@@ -73,7 +77,7 @@ echo "echo" >> /root/.bashrc
 echo "echo 'Monitor the spaced daemon with the following. <Ctrl-a> then d to detach from session.'" >> /root/.bashrc
 echo "echo 'screen -x spaced'" >> /root/.bashrc
 echo "alias spaces='space-cli --chain mainnet'" >> /root/.bashrc
-echo "screen -S spaced -d -m spaced" >> /root/.bashrc
+# echo "screen -S spaced -d -m spaced" >> /root/.bashrc
 echo "export PS1='spaces:\w$ '" >> /root/.bashrc
 echo "echo" >> /root/.bashrc
 # Launch background processes in their own screen detached
@@ -88,8 +92,9 @@ echo "echo" >> /root/.bashrc
 
 #echo "/usr/bin/screen -S spaced -d -m /root/.cargo/bin/spaced" >> /root/.bashrc
 echo "if [[ \$(screen -ls | grep spaced | wc -l) > 0 ]]; then" >> /root/.bashrc
-echo "  echo 'already running spaced'" >> /root/.bashrc                     
+echo "  echo 'Spaced is already running.'" >> /root/.bashrc                     
 echo "else" >> /root/.bashrc                                              
+echo "  echo 'Starting spaced.'" >> /root/.bashrc                     
 echo "  /usr/bin/screen -S spaced -d -m /root/.cargo/bin/spaced" >> /root/.bashrc     
 echo "fi" >> /root/.bashrc                                            
 
