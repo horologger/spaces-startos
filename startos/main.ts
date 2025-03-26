@@ -8,7 +8,7 @@ export const main = sdk.setupMain(async ({ effects, started }) => {
    *
    * In this section, we fetch any resources or run any desired preliminary commands.
    */
-  console.info('Starting BTCShell!')
+  console.info('Starting Spaces!')
 
   const store = await sdk.store.getOwn(effects, sdk.StorePath).const()
 
