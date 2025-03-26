@@ -15,8 +15,8 @@ export const resetPassword = sdk.Action.withoutInput(
     return {
       name: hasPassword ? 'Reset password' : 'Create password',
       description: hasPassword
-        ? 'Reset your BTC Shell UI password'
-        : 'Create your BTC Shell UI password',
+        ? 'Reset your Spaces UI password'
+        : 'Create your Spaces UI password',
       warning: null,
       allowedStatuses: 'any',
       group: null,

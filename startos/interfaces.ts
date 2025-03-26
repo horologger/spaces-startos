@@ -11,7 +11,7 @@ export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
   const ui = sdk.createInterface(effects, {
     name: 'Web User Interface',
     id: 'ui',
-    description: 'Web UI for BTC Shell',
+    description: 'Web UI for Spaces',
     type: 'ui',
     masked: false,
     schemeOverride: null,

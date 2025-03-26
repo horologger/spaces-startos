@@ -14,7 +14,7 @@ export const manifest = setupManifest({
     long: 'Spaces empowers users with a sovereign Bitcoin identity, anchored securely on the Bitcoin blockchain.',
   },
   volumes: ['main'],
-  images: { btcshell: { source: { dockerTag: 'horologger/spaces:v0.0.7' } } },
+  images: { spaces: { source: { dockerTag: 'horologger/spaces:v0.0.7' } } },
   hardwareRequirements: {},
   alerts: {
     install: null,

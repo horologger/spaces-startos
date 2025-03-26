@@ -11,11 +11,11 @@ import { randomPassword } from './utils'
 
 // **** Install ****
 const install = sdk.setupInstall(async ({ effects }) => {
-  const btcUsername = `btcshell_${utils.getDefaultString({ charset: 'a-z,A-Z', len: 8 })}`
+  const btcUsername = `spaces_${utils.getDefaultString({ charset: 'a-z,A-Z', len: 8 })}`
   const btcPassword = utils.getDefaultString(randomPassword())
 
   await sdk.action.requestOwn(effects, resetPassword, 'critical', {
-    reason: 'Needed to obtain BTC Shell UI password',
+    reason: 'Needed to obtain Spaces UI password',
   })
 
   await sdk.action.request(
@@ -31,7 +31,7 @@ const install = sdk.setupInstall(async ({ effects }) => {
           password: btcPassword,
         },
       },
-      reason: 'BTC Shell needs an RPC user in Bitcoin',
+      reason: 'Spaces needs an RPC user in Bitcoin',
     },
   )
 
