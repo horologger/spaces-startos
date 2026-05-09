@@ -8,3 +8,5 @@ docker-images/
 scripts/*.js
 NOTES.md
 .vscode/
+startos/
+

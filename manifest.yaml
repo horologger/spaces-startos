@@ -1,7 +1,7 @@
 id: spaces
 title: Spaces
-version: 0.0.7
-release-notes: Spaces 0.0.7
+version: 0.0.9a
+release-notes: Spaces 0.0.9a
 license: Apache-2.0
 wrapper-repo: "https://github.com/horologger/spaces-startos"
 upstream-repo: "https://github.com/horologger/spaces"

@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../mempool-startos"
+		}
+	],
+	"settings": {}
+}
